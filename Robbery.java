@@ -18,7 +18,7 @@ public class Robbery {
 		(for int i = 0; i < sizes.length; i++)
 	        {
 		  
-	         iV[i] = new 
+	         iV[i] = new itemVal(sizes[i], worths[i], i);
 			return 2;
 		}
 	}
