@@ -11,11 +11,25 @@ public class Robbery {
 		int capacity,
 		int[] sizes,
 		int[] worths
-	) {
-		// fill in here, change the return
-			return 2;
-	}
 
+	) {
+
+    int[][] F = new int[sizes.length][sizes.length];
+    for(int i=0;i< sizes.length;i++){
+       for(int j=0;j<worths.length;j++){
+         if(sizes[i]> j ) F[i][j]= F[i-1][j];
+         else F[i][j] = max(F[i-1][j], sizes[i] + F[i-1][j-sizes[i]]);
+         
+
+       }
+    }
+		// fill in here, change the return
+			return F[sizes.length][worths.length];
+	}
+  public int max(int a, int b){
+    if( a > b) return a;
+    else return b;
+  }
 	public int maximizeRobWorthBottomUp(
 		int capacity,
 		int[] sizes,
