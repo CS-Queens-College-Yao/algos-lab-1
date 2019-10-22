@@ -13,6 +13,15 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		int i, max;
+		//max[] = 
+		for(i=0; i<capacity;i++)
+		    {
+		        if(sizes[i]<capacity){
+		            capacity=sizes[i];
+		        }
+		    }
+			return sizes[i];
 			return 2;
 	}
 
