@@ -12,8 +12,8 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-			return 2;
+		
+		return 2;
 	}
 
 	public int maximizeRobWorthBottomUp(
@@ -21,8 +21,30 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-		return 2;
+		//arrange items by value
+		int[] values = new int[sizes.length];
+		for(int i = 0; i < values.length; i++)
+			values[i] = worth[i] / sizes[i];
+		
+		Arrays.sort(values);
+		
+		int pos = values.length - 1; //position of the item with the most value
+		int itemWithMostValue = values[pos];
+		int max_value = 0;
+		
+		while(capacity > 0 && capacity > itemWithMostValue){
+			
+			if(capacity - itemWithMostValue >= 0){
+				capacity = capacity - itemWithMostValue;
+				max_value = max_value + itemWithMostValue;
+			}else if(pos > 0){ //switch to next item with the most value
+				pos = pos - 1;
+				itemWithMostValue = values[pos];
+			}
+			
+		}
+		
+		return max_value;
 	}
 
 /**
