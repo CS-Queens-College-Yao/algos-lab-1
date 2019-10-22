@@ -12,8 +12,22 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
+		
+		if(capacity == 0 || size.length == 0) {
+			return 0;
+		}
+		else {
+			if(sizes[sizes.length -1] > capacity) return maximizeRobWorthRecur(capacity, sizes, worths);
+			else {
+				int temp1 = maximizeRobWorthRecur(capacity, sizes, worths);
+				int temp2 = maximizeRobWorthRecur(capacity - sizes[sizes.length -1], sizes, worths);
+				
+				return temp1>temp2? temp1:temp2;
+			}
+		}
+		
+		
 		// fill in here, change the return
-			return 2;
 	}
 
 	public int maximizeRobWorthBottomUp(
