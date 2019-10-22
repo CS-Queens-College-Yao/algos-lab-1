@@ -12,6 +12,7 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
+		//changes tha are need to make 
 		// fill in here, change the return
 			return 2;
 	}
@@ -22,6 +23,8 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		
+		//Changes that i have to make 
 		return 2;
 	}
 
