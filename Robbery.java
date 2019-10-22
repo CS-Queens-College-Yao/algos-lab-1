@@ -13,7 +13,14 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		// go through the size
+		itemVal[] iV = new itemVal[sizes,length];
+		(for int i = 0; i < sizes.length; i++)
+	        {
+		  
+	         iV[i] = new itemVal(sizes[i], worths[i], i);
 			return 2;
+		}
 	}
 
 	public int maximizeRobWorthBottomUp(
@@ -22,6 +29,7 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		
 		return 2;
 	}
 
