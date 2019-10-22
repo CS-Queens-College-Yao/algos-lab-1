@@ -13,7 +13,19 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+		double[] max; int[] c; int s;
+	for(int j=0;j<sizes.length;j++) {	
+		for(int i=j;i<sizes.length;i++)
+			int temp=worths[i], s=sizes[i];
+			if(worths[i]/sizes[i]*1.0>max)
+				max[]=worths[i]/sizes[i],c1=sizes[i];
+	}	
+		if(c<c1)
+			return max*c;
+		else
+			while(c>c1)
+				value=max*c1;c=c-c1;
+			
 	}
 
 	public int maximizeRobWorthBottomUp(
