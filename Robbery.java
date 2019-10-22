@@ -24,6 +24,19 @@ public class Robbery {
 		// fill in here, change the return
 		return 2;
 	}
+	public int maximizeRobWorth(
+		int capacity,
+		int[] sizes,
+		int[] worths,
+		int[][] wTable
+	) {
+	  // fill the first level of the table with zeros
+	  // for each item
+	  // for each capacity
+	  // if weight[i-1]>capacity,Table[i,j] = Table[i-1,j]
+	  // else Table[i,j] = Max(Table[i-1,j],worth[i] + Table[i-1,capacity-size[i]])
+	  // return Table[items][capacity];
+	}
 
 /**
 * Bonus: figure out which items exactly
