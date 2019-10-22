@@ -8,28 +8,42 @@ public class Robbery {
 
 	// Using DP: Get the maximum value with capacity C and n items
 	public int maximizeRobWorthRecur(
-		int capacity,
-		int[] sizes,
-		int[] worths
-	) {
-		// fill in here, change the return
-			return 2;
-	}
-
-	public int maximizeRobWorthBottomUp(
-		int capacity,
-		int[] sizes,
-		int[] worths
+			int capacity,
+			int[] sizes,
+			int[] worths
 	) {
 		// fill in here, change the return
 		return 2;
 	}
 
-/**
-* Bonus: figure out which items exactly
-* Takes in a DP DPTable
-* Returns an int array of the individual worths of the items you took
-*/
+	public int maximizeRobWorthBottomUp(
+			int capacity,
+			int[] sizes,
+			int[] worths
+	) {
+		int maxWorths = worths[0];
+		for(int i = 0; i<worths.length;i++){
+			if(worths[i] > maxWorths)
+			{
+				maxWorths = worths[i];
+			}
+		}
+		int maxSizes = sizes[0];
+		for(int i = 0; i<sizes.length;i++){
+			if(sizes[i] > maxWorths)
+			{
+				maxSizes = sizes[i];
+			}
+		}
+		// fill in here, change the return
+		return maxWorths/maxSizes;
+	}
+
+	/**
+	 * Bonus: figure out which items exactly
+	 * Takes in a DP DPTable
+	 * Returns an int array of the individual worths of the items you took
+	 */
 	public int[] takeRobInventory(int[][] DPTable) {
 		// fill in here, change the return
 		return new int[DPTable.length];
