@@ -12,6 +12,13 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
+		int temp = 0;
+		for(int i = 0; i < sizes.length; i++){
+			if (temp > capacity) return worths[i];
+			else if (worths[i] > worths[i + 1]) 
+				
+					
+		}
 		// fill in here, change the return
 			return 2;
 	}
