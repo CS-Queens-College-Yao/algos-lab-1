@@ -13,7 +13,20 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+			return knapSackRecur(capacity, sizes, worths, worths.length);
+	}
+
+	public int max(int a, int b) {return (a>b)? a:b;}
+	
+	public int knapSackRecur(int cap, int weights[], int values[], int n){
+		if (n ==0 || cap ==0){
+			return 0;
+		}
+		if (weights[n-1] > cap){
+			return knapSackRecur(cap, weights, values, n-1);
+		}
+		else return max(values[n-1] + knapSackRecur(cap-weights[n-1], weights, values, n-1), knapSackRecur(cap, weights, values, n-1));
+
 	}
 
 	public int maximizeRobWorthBottomUp(
@@ -22,7 +35,28 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-		return 2;
+		return knapSackBottomUp(capacity, sizes, worths, worths.length);
+	}
+	public int knapSackBottomUp(int cap, int weights[], int values[], int n){
+		int i, w;
+		int K[][] = new int [n+1][cap+1];
+
+
+		for(i=0;i<=n;i++){
+			for(w=0;w<=cap;w++){
+				if(i==0 || w==0){
+					K[i][w]=0;
+				}
+				else if (weights[i-1]<=w){
+					K[i][w] = max(values[i-1] + K[i-1][w-weights[i-1]], K[i-1][w]);
+				}
+				else{
+					K[i][w]=K[i-1][w];
+				}
+			}
+		}
+		return K[n][cap];
+
 	}
 
 /**
