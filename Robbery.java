@@ -15,6 +15,7 @@ public class Robbery {
 		// fill in here, change the return
 			// pretend code
 			// pretend code
+			// more code
 			return 2;
 	}
 
@@ -25,6 +26,7 @@ public class Robbery {
 	) {
 		// fill in here, change the return
 		 // code here
+		 // more code
 		return 2;
 	}
 
