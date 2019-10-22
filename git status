@@ -1,0 +1,29 @@
+[1mdiff --git a/Robbery.java b/Robbery.java[m
+[1mindex cf82da3..dddd76f 100644[m
+[1m--- a/Robbery.java[m
+[1m+++ b/Robbery.java[m
+[36m@@ -21,8 +21,22 @@[m [mpublic class Robbery {[m
+ 		int[] sizes,[m
+ 		int[] worths[m
+ 	) {[m
+[31m-		// fill in here, change the return[m
+[31m-		return 2;[m
+[32m+[m		[32mint itemsLength = sizes.length;[m[41m[m
+[32m+[m		[32mint[][] array = new int[itemsLength][capacity];[m[41m[m
+[32m+[m		[32mint weight = 0;[m[41m[m
+[32m+[m[41m		[m
+[32m+[m		[32mfor (int i = 0; i < itemsLength; i++) {[m[41m[m
+[32m+[m			[32mfor (int j = 0; j < capacity; j++) {[m[41m[m
+[32m+[m				[32mif (weight > worths[j]) {[m[41m[m
+[32m+[m					[32marray[i][j] = array[i-1][j];[m[41m[m
+[32m+[m				[32m}[m[41m[m
+[32m+[m				[32melse {[m[41m[m
+[32m+[m					[32marray[i][j] = Math.max(array[i-1][j], worths[i]+array[i-1][j-worths[i]]);[m[41m[m
+[32m+[m				[32m}[m[41m[m
+[32m+[m			[32m}[m[41m[m
+[32m+[m		[32m}[m[41m[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn array[sizes.length][capacity];[m[41m[m
+ 	}[m
+ [m
+ /**[m
