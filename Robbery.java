@@ -24,7 +24,7 @@ public class Robbery {
 		//arrange items by value
 		int[] values = new int[sizes.length];
 		for(int i = 0; i < values.length; i++)
-			values[i] = worth[i] / sizes[i];
+			values[i] = worths[i] / sizes[i];
 		
 		Arrays.sort(values);
 		
