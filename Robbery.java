@@ -13,7 +13,14 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+			int[][] bagSizes = new int[worths.length][2];
+		int max = worths[0];
+		for(int i = 1; i < worths.length; i++){
+			if (max < worths[i]){
+				max = worths[i];
+			}
+			bagSizes[i][i]
+		}
 	}
 
 	public int maximizeRobWorthBottomUp(
