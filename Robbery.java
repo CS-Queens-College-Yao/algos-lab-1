@@ -7,22 +7,41 @@
 public class Robbery {
 
 	// Using DP: Get the maximum value with capacity C and n items
-	public int maximizeRobWorthRecur(
-		int capacity,
-		int[] sizes,
-		int[] worths
-	) {
+	public int maximizeRobWorthRecur(int capacity,int[] sizes,int[] worths) {
 		// fill in here, change the return
-			return 2;
+		int current_weight = 0;
+		int counter = 0;
+		int amount = 0;
+
+		while(current_weight <= capacity ){
+			if(sizes[counter] > capacity){
+				counter++;
+			}
+			else if (worth[counter] <= capacity )
+			{
+				while(current_weight <= capacity || amount == sizes[counter] )
+					{
+						if()
+					}
+
+			}
+		}
+			
+
+			return 7;
 	}
 
-	public int maximizeRobWorthBottomUp(
-		int capacity,
-		int[] sizes,
-		int[] worths
-	) {
+	public int maximizeRobWorthBottomUp(int capacity,int[] sizes,int[] worths) {
+		
 		// fill in here, change the return
-		return 2;
+		for (int i = 0;i < sizes.length; i++){
+			for(int j = 0; j < worth.length;i++ ){
+				if (worth[j] > )
+			}
+		}
+
+
+		return ;
 	}
 
 /**
