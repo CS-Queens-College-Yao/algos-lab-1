@@ -13,6 +13,7 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		//Test comment I added for new branch
 			return 2;
 	}
 
@@ -22,6 +23,7 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		//Test comment I added for new branch
 		return 2;
 	}
 
