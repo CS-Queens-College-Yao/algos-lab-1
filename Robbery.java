@@ -13,16 +13,36 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		
 			return 2;
 	}
 
 	public int maximizeRobWorthBottomUp(
 		int capacity,
 		int[] sizes,
-		int[] worths
+		int[] worths,
+		int[][] result
 	) {
 		// fill in here, change the return
+		int n = sizes.length;
+		int w = worths.length;
+		for (int i =0; i < n; i ++) {
+			for (int j= 0; capacity > j; j++) {
+				if (worths[i] > j) {
+					result[i][j] = 
+				}
+					
+					
+			}
+		}
+		
 		return 2;
+	}
+	
+	public int max(int x, int y) {
+		int max;
+		max = Integer.max(x, y);
+		return max;
 	}
 
 /**
