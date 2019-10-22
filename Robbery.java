@@ -12,8 +12,10 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-			return 2;
+			// some code changes
+			// more code changes
+			int opt = 10;
+			return opt;
 	}
 
 	public int maximizeRobWorthBottomUp(
@@ -21,8 +23,12 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-		return 2;
+		int[][] table = new int[sizes][worths];
+		//for (int i = 0; i )
+			// for (int j = 0; )
+				//
+		int opt = 10;
+		return opt;
 	}
 
 /**
