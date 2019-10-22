@@ -13,7 +13,32 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+		int[][] f = new int[sizes.length][capacity];
+		for (int i = 0; i < sizes.length-1; i++)
+		{
+			for (int j = 0; j < capacity-1; j++)
+			{
+				if(i == 0 || j == 0)
+				{
+					f[i][j] = 0;
+				}
+				else if(sizes[i] > f[i][j])
+				{
+					f[i][j] = 1;//f[i-1][j];
+				}
+			}
+		}
+		
+		for (int i = 0; i < sizes.length-1; i++)
+		{
+			for (int j = 0; j < capacity-1; j++)
+			{
+				System.out.print(f[i][j] + "  ");
+			}
+			
+			System.out.println();
+		}
+		return 2;
 	}
 
 	public int maximizeRobWorthBottomUp(
