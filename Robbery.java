@@ -1,3 +1,5 @@
+import javax.lang.model.util.ElementScanner6;
+
 // You have a heist getaway sack with a capacity, and n items in front of you
 // with sizes and worths. Figure out the maximum value you could
 // get with the items.
@@ -5,21 +7,6 @@
 // You are encouraged to make helper functions!
 
 public class Robbery {
-
-	public int max(int a, int b) {
-		if (a > b)
-			return a;
-		else
-			return b;
-	}
-
-	public int min(int a, int b) {
-		if (a < b)
-			return a;
-		else
-			return b;
-	}
-
 	// Using DP: Get the maximum value with capacity C and n items
 	public int maximizeRobWorthRecur(int capacity, int[] sizes, int[] worths) {
 		// fill in here, change the return
@@ -29,19 +16,17 @@ public class Robbery {
 	public int maximizeRobWorthBottomUp(int capacity, int[] sizes, int[] worths) {
 		// fill in here, change the return
 		int[][] values = new int[sizes.length + 1][capacity + 1];
-		for (int i = 0; i <= capacity; i++) {
-			values[0][i] = 0;
-		}
-
-		for (int i = 1; i <= sizes.length; i++) {
-			for (int k = 0; k < capacity; i++) {
-				if (worths[i - 1] > k)
-					values[i][k] = values[i - 1][k];
+		for (int i = 0; i <= sizes.length; i++) {
+			for (int k = 0; k <= capacity; k++) {
+				if (i == 0 || k == 0)
+					values[i][k] = 0;
+				else if (sizes[i - 1] <= k)
+					values[i][k] = Math.max(worths[i - 1] + values[i - 1][k - sizes[i - 1]], values[i - 1][k]);
 				else
-					values[i][k] = max(i, k);
+					values[i][k] = values[i - 1][k];
 			}
 		}
-		return 2;
+		return values[sizes.length][capacity];
 	}
 
 	/**
