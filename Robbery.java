@@ -26,6 +26,7 @@ public class Robbery {
 else
 		B[i,w] = B[i-1,w]
 else B[i,w] = B[i-1,w] // wi >
+		// huge troble
 			return 2;
 	}
 
