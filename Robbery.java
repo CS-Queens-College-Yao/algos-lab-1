@@ -13,6 +13,7 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		//SAMPLE CHANGE
 			return 2;
 	}
 
@@ -22,6 +23,9 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		//SAMPLE CHANGE
+		//More Sample changes
+		
 		return 2;
 	}
 
