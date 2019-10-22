@@ -1,8 +1,10 @@
-// You have a heist getaway sack with a capacity, and n items in front of you
-// with sizes and worths. Figure out the maximum value you could
-// get with the items.
+import java.util.Arrays;
 
-// You are encouraged to make helper functions!
+//You have a heist getaway sack with a capacity, and n items in front of you
+//with sizes and worths. Figure out the maximum value you could
+//get with the items.
+
+//You are encouraged to make helper functions!
 
 public class Robbery {
 
@@ -13,16 +15,59 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
-	}
+		// size of our item array
+        int n = sizes.length;
 
-	public int maximizeRobWorthBottomUp(
+        // base case when there is no more items to compare
+        if (n == 0 || capacity == 0) {
+            return 0;
+        }
+
+        // If weight of the nth item in the list is more than the capacity ,
+        // then this item cannot be added in the sack
+        if (sizes[n - 1] > capacity) {
+            return maximizeRobWorthRecur(capacity, Arrays.copyOf(sizes, n - 1), Arrays.copyOf(worths, n - 1));
+        } //
+        // Now there are two cases :
+        // a. include the n-th item in the sack
+        // b. don't include it in the sack
+        // such that the sack has items whose worth is "maximized"
+        // 'iff' the n-th item is included in the sack we decrease the capacity of the sack by it's size
+        else {
+            return Math.max(worths[n - 1] + maximizeRobWorthRecur(capacity - sizes[n - 1], Arrays.copyOf(sizes, n - 1), Arrays.copyOf(worths, n - 1)),
+                    maximizeRobWorthRecur(capacity, Arrays.copyOf(sizes, n - 1), Arrays.copyOf(worths, n - 1)));
+        }
+    }
+
+
+	
+	
+	
+	public int[][] maximizeRobWorthBottomUp(
 		int capacity,
 		int[] sizes,
 		int[] worths
 	) {
 		// fill in here, change the return
-		return 2;
+		 int i, j, n = sizes.length;
+
+	        // building the knapsack table denoted by K
+	        int K[][] = new int[n + 1][capacity + 1];
+
+	        // building the table in bottom up manner
+	        for (i = 0; i <= n; i++) {
+	            for (j = 0; j <= capacity; j++) {
+	                if (i == 0 || j == 0) {
+	                    K[i][j] = 0;
+	                } else if (sizes[i - 1] <= j) {
+	                    K[i][j] = Math.max(worths[i - 1] + K[i - 1][j - sizes[i - 1]], K[i - 1][j]);
+	                } else {
+	                    K[i][j] = K[i - 1][j];
+	                }
+	            }
+	        }
+
+	        return K; 
 	}
 
 /**
@@ -43,7 +88,7 @@ public class Robbery {
 
 		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
 		System.out.println("Max worth of the bag: " + maxWorthRecur);
-		int maxWorthBottomUp = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths);
+		int maxWorthBottomUp[][] = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths);
 		System.out.println("Max worth of the bag: " + maxWorthBottomUp);
 
 		// Bonus: Fill in the helper method takeRobInventory that could help you
