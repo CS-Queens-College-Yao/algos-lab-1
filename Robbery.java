@@ -12,8 +12,12 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
+		
 		// fill in here, change the return
-			return 2;
+		if(capacity==0)
+			return 0;
+		if(worths[n-1]>capacity)
+			return maximumRobWorthRecur(capacity, worth, sizes, n-1);
 	}
 
 	public int maximizeRobWorthBottomUp(
