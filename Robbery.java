@@ -22,6 +22,7 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		// pretend code
 		return 2;
 	}
 
