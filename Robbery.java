@@ -22,7 +22,20 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-		return 2;
+		int n=sizes.length;
+		 if(capacity <= 0) {
+	           return 0;
+	       }else {
+	           int n1 = sizes.length;
+	           if(n1 == 0) {
+	               return 0;
+	           }else if(n1 == 1) {
+	               if(capacity >= sizes[0])
+	                   return worths[0];
+	               else
+	                   return 0;
+	           }
+		
 	}
 
 /**
