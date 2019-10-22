@@ -9,10 +9,23 @@ public class Robbery {
 	// Using DP: Get the maximum value with capacity C and n items
 	public int maximizeRobWorthRecur(
 		int capacity,
-		int[] sizes,
-		int[] worths
+		int[] sizes,to capacity;
+		int[] worths;
 	) {
 		// fill in here, change the return
+		// i am getting lost with this . I need to pratcise it . i have just add whatever on the bottom
+		//to just send whatever
+		for w = 0
+		B[0,capacity] = 0;
+		for i = 1 to sizes.length();
+		B[i,0] = 0;
+		for i = 1 to n;
+		for w = 0 to W;
+		if (wi <= w )// item i can be part of the solution
+		   if bi + B[i-1,w-wi] > B[i-1,w] B[i,w] = bi + B[i-1,w- wi]
+else
+		B[i,w] = B[i-1,w]
+else B[i,w] = B[i-1,w] // wi >
 			return 2;
 	}
 
