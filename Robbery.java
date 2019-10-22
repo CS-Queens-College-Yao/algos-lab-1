@@ -13,6 +13,7 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		if()
 			return 2;
 	}
 
@@ -23,6 +24,13 @@ public class Robbery {
 	) {
 		// fill in here, change the return
 		return 2;
+	}
+	
+	//helper function returns the max of two integers
+	public int max (int x, int y) {
+		if (x > y) {
+			return x;
+		} else return y;
 	}
 
 /**
