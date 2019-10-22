@@ -10,14 +10,14 @@ public class Robbery {
 	public int maximizeRobWorthRecur(
 		int capacity,
 		int[] sizes,
-		int[] worths
+		int[] worths//random code
 	) {
 		// fill in here, change the return
 			return 2;
 	}
 
 	public int maximizeRobWorthBottomUp(
-		int capacity,
+		int capacity,//random code
 		int[] sizes,
 		int[] worths
 	) {
