@@ -13,7 +13,20 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+		int tempMaxWorth = 0;
+		int tempMaxWeight = 0;
+		
+		// Remember to rethink arrays
+		for(int item = 0; item < amountOfItems; item++) 
+		{
+			for(int currentWeight = 0; currentWeight < capacity; currentWeight++) {
+				if(tempMaxWeight==capacity) { return tempMaxWorth; }
+				else if(tempMaxWeight < capacity) {} // iterate through the loop
+				else {} //
+			}
+		}
+		
+		return -1;
 	}
 
 	public int maximizeRobWorthBottomUp(
