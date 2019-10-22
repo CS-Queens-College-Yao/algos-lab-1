@@ -13,7 +13,14 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+		for(int i=0; i<sizes.length; i++) {
+			for(int j=0; j<sizes.length; j++) {
+				if (worths[i] > j) 
+					return (worths[i] + maximizeRobWorthRecur(capacity, sizes, worths));
+				else 
+					return max(worths[i] + maximizeRobWorthRecur(capacity, sizes, worths), maximizeRobWorthRecur(capacity, sizes, worths));
+			}	
+		}
 	}
 
 	public int maximizeRobWorthBottomUp(
