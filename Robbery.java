@@ -1,4 +1,4 @@
-// You h+ave a heist getaway sack with a capacity, and n items in front of you
+// You have a heist getaway sack with a capacity, and n items in front of you
 // with sizes and worths. Figure out the maximum value you could
 // get with the items.
 
@@ -29,7 +29,7 @@ public class Robbery {
 		for (int i =0; i < n; i ++) {
 			for (int j= 0; capacity > j; j++) {
 				if (worths[i] > j) {
-					
+					result[i][j] = 
 				}
 					
 					
