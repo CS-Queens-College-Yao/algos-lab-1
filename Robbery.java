@@ -12,6 +12,7 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
+		// add comment
 		// fill in here, change the return
 			return 2;
 	}
@@ -21,6 +22,7 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
+		// another comment
 		// fill in here, change the return
 		return 2;
 	}
