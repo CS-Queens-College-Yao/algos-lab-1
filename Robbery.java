@@ -13,13 +13,17 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+		if (capacity == 0)
+		    return 0;
+
+		if ()
 	}
 
 	public int maximizeRobWorthBottomUp(
 		int capacity,
 		int[] sizes,
 		int[] worths
+        int[] table;
 	) {
 		// fill in here, change the return
 		return 2;
