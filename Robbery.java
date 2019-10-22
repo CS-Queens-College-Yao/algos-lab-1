@@ -12,9 +12,24 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-			return 2;
+		static int i = sizes.length()-1;
+		static int count =0;
+		if(capacity = 0) {
+			return 0;
+		}
+		else if(sizes[i] > capacity){
+			i--;
+			count++;
+			sizes[i] =0;
+			return maximizeRobWorthRecur(capacity, sizes, worths);
+		}
+		else{
+			i++;
+			int Max = worth[i-1] + maximizeRobWorthRecur(capacity - sizes[i], sizes, worths);
+		}
 	}
+
+
 
 	public int maximizeRobWorthBottomUp(
 		int capacity,
