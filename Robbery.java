@@ -15,8 +15,12 @@ public class Robbery {
 		// fill in here, change the return
 			return 2;
 	}
-
+//www
+	
+	
+	
 	public int maximizeRobWorthBottomUp(
+			int i;
 		int capacity,
 		int[] sizes,
 		int[] worths
