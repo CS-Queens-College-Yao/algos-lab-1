@@ -21,8 +21,22 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-		return 2;
+		int itemsLength = sizes.length;
+		int[][] array = new int[itemsLength][capacity];
+		int weight = 0;
+		
+		for (int i = 0; i < itemsLength; i++) {
+			for (int j = 0; j < capacity; j++) {
+				if (weight > worths[j]) {
+					array[i][j] = array[i-1][j];
+				}
+				else {
+					array[i][j] = Math.max(array[i-1][j], worths[i]+array[i-1][j-worths[i]]);
+				}
+			}
+		}
+		
+		return array[sizes.length][capacity];
 	}
 
 /**
