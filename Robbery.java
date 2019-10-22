@@ -10,16 +10,24 @@ public class Robbery {
 	public int maximizeRobWorthRecur(
 		int capacity,
 		int[] sizes,
-		int[] worths
+		int[] worths,
+		int n 
 	) {
+		//base case;
+		if(capacity == 0 || n == 0) return 0;
+		if(sizes[n-1] > capacity){
+			return maximizeRobWorthRecur(capacity, sizes, worths, n-1);
+		}
+		else return max(worths[n-1] + maximizeRobWorthRecur(capacity-size[n-1], sizes, worths, n-1),maximizeRobWorthRecur(capacity, sizes, worths, n-1));
 		// fill in here, change the return
-			return 2;
+			// return 2;
 	}
 
 	public int maximizeRobWorthBottomUp(
 		int capacity,
 		int[] sizes,
-		int[] worths
+		int[] worths,
+		int n
 	) {
 		// fill in here, change the return
 		return 2;
@@ -38,12 +46,13 @@ public class Robbery {
 	public static void main(String[] args) {
 		Robbery r = new Robbery();
 		int bagCapacity = 40;
+		int n =  itemWorths.length;
 		int[] itemSizes = {2, 25, 6, 13, 1, 15, 8, 5, 17, 4};
 		int[] itemWorths = {35, 120, 900, 344, 29, 64, 67, 95, 33, 10};
 
-		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
+		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths,n);
 		System.out.println("Max worth of the bag: " + maxWorthRecur);
-		int maxWorthBottomUp = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths);
+		int maxWorthBottomUp = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths,n);
 		System.out.println("Max worth of the bag: " + maxWorthBottomUp);
 
 		// Bonus: Fill in the helper method takeRobInventory that could help you
