@@ -6,6 +6,8 @@
 
 public class Robbery {
 
+	public int[] tempValues;
+
 	// Using DP: Get the maximum value with capacity C and n items
 	public int maximizeRobWorthRecur(
 		int capacity,
@@ -22,7 +24,24 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		int weightRemaining = capacity;
+		/* pseudo form class modified
+		for (int i=0; i < sizes.length; i++) {
+			for (int j = 0; j < weightRemaining; j++) {
+				if ( sizes[] )
+			}
+		}
+        */
 		return 2;
+	}
+
+	public static void createValueWeightArray (int[] values, int[] weights){
+		for (int i=0; i<values.length; i++)
+			tempValues[i] = (values[i] / weights[i]);
+	}
+
+	public static void sortValueWeight (int[] valueWeight){
+
 	}
 
 /**
@@ -40,6 +59,9 @@ public class Robbery {
 		int bagCapacity = 40;
 		int[] itemSizes = {2, 25, 6, 13, 1, 15, 8, 5, 17, 4};
 		int[] itemWorths = {35, 120, 900, 344, 29, 64, 67, 95, 33, 10};
+
+		//Create the array of items (val/weight)
+		createValueWeightArray(itemWorths,itemSizes);
 
 		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
 		System.out.println("Max worth of the bag: " + maxWorthRecur);
