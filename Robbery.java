@@ -37,6 +37,9 @@ public class Robbery {
 	}
 
 	public static void main(String[] args) {
+		
+		System.out.println("Hello Robber");
+		/*
 		Robbery r = new Robbery();
 		int bagCapacity = 40;
 		int[] itemSizes = {2, 25, 6, 13, 1, 15, 8, 5, 17, 4};
@@ -46,6 +49,7 @@ public class Robbery {
 		System.out.println("Max worth of the bag: " + maxWorthRecur);
 		int maxWorthBottomUp = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths);
 		System.out.println("Max worth of the bag: " + maxWorthBottomUp);
+		*/
 
 		// Bonus: Fill in the helper method takeRobInventory that could help you
 		//figure out which items go into the bag that make it max worth. Feel free
