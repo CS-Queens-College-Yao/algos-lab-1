@@ -13,7 +13,8 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+		// return first value in worths
+			return worths[0];
 	}
 
 	public int maximizeRobWorthBottomUp(
@@ -22,7 +23,8 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-		return 2;
+		// return last value in worths
+		return worths[worths.length - 1];
 	}
 
 /**
@@ -40,11 +42,19 @@ public class Robbery {
 		int bagCapacity = 40;
 		int[] itemSizes = {2, 25, 6, 13, 1, 15, 8, 5, 17, 4};
 		int[] itemWorths = {35, 120, 900, 344, 29, 64, 67, 95, 33, 10};
+		// will return first value in itemWorths
+		int tempWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
+		System.out.println("Max worth of the bag: " + tempWorthRecur);
 
-		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
-		System.out.println("Max worth of the bag: " + maxWorthRecur);
-		int maxWorthBottomUp = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths);
-		System.out.println("Max worth of the bag: " + maxWorthBottomUp);
+//		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
+//		System.out.println("Max worth of the bag: " + maxWorthRecur);
+		// will return last value in itemWorths
+		int tempWorthBottomUp = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths);
+		System.out.println("Max worth of the bag: " + tempWorthBottomUp);
+		
+//		int maxWorthBottomUp = r.maximizeRobWorthBottomUp(bagCapacity, itemSizes, itemWorths);
+//		System.out.println("Max worth of the bag: " + maxWorthBottomUp);
+
 
 		// Bonus: Fill in the helper method takeRobInventory that could help you
 		//figure out which items go into the bag that make it max worth. Feel free
