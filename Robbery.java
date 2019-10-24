@@ -14,7 +14,8 @@ public class Robbery {
 	) {
 		// fill in here, change the return
 		// changing code
-			return 2;
+		// hello
+			return 0;
 	}
 
 	public int maximizeRobWorthBottomUp(
