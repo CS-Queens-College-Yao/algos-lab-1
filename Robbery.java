@@ -13,7 +13,9 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
-			return 2;
+		// changing code
+		// hello
+			return 0;
 	}
 
 	public int maximizeRobWorthBottomUp(
@@ -22,6 +24,7 @@ public class Robbery {
 		int[] worths
 	) {
 		// fill in here, change the return
+		//changing code
 		return 2;
 	}
 
@@ -32,6 +35,7 @@ public class Robbery {
 */
 	public int[] takeRobInventory(int[][] DPTable) {
 		// fill in here, change the return
+		// changing code
 		return new int[DPTable.length];
 	}
 
