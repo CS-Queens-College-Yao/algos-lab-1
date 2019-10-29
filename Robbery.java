@@ -18,7 +18,7 @@ public class Robbery {
 		for(int i=j;i<sizes.length;i++)
 			int temp=worths[i], s=sizes[i];
 			if(worths[i]/sizes[i]*1.0>max)
-				max[]=worths[i]/sizes[i],c1=sizes[i];
+				max[]=worths[i]/sizes[i],c1=sizes[i];...
 	}	
 		if(c<c1)
 			return max*c;
